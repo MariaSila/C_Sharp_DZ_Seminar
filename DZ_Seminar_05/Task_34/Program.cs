@@ -4,6 +4,13 @@
 [345, 897, 568, 234] -> 2
 */
 
+int Prompt (string message)
+{
+    System.Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine()!);
+    return result;
+}
+
 int[] GetArray (int length, int minValue, int maxValue)
 {
     int [] array = new int[length];
@@ -12,14 +19,6 @@ int[] GetArray (int length, int minValue, int maxValue)
         array[i] = new Random().Next(minValue,maxValue + 1); 
     }   
     return array;
-}
-
-int Prompt (string message)
-{
-    System.Console.Write(message);
-    //string ReadInput = Console.ReadLine();
-    int result = Convert.ToInt32(Console.ReadLine()!);
-    return result;
 }
 
 void PrintArray (int[] array)
@@ -36,10 +35,8 @@ int CountEvenNumbers (int[] array)
     int count = 0;
     foreach (int item in array)
     {
-        int result = item % 2;
-        if (result == 0)
-            count += 1;
-    
+        if (item % 2 == 0)
+        count += 1;
     }
     return count;
 }
