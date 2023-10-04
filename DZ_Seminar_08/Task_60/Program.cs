@@ -52,12 +52,19 @@ int[,,] Get3DArrayUnicElement(int x, int y, int z, int minValue = 10, int maxVal
 
 void Print3DArray(int[,,] array)
 {
+    int error = -1;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
             {
+                if (array[i, j, k] == error)
+            {
+                System.Console.WriteLine("Ошибка! Матрица превышает возможные значения из неповторяющихся положительных двухзначных чисел.");
+                System.Console.WriteLine();
+                return;
+            }
                 System.Console.WriteLine($"{array[i, j, k]} ({i}, {j}, {k})");
             }
         }
