@@ -64,8 +64,8 @@ int[] SumRowElements(int[,] array)
 int LineWithMinSum(int[] massive)
 {
     int min = massive[0];
-    int index_min = 0;
-    for (int i = 1; i < massive.Length; i++)
+    int index_min = 1;
+    for (int i = 0; i < massive.Length; i++)
     {
         if (min > massive[i])
         {
